@@ -2,7 +2,7 @@
 describe("Gamedonia test environments", function() {
     
 	// config
-	var col_name = "movies";
+	var col_name = "players";
 	
     var env=null;
 
@@ -17,7 +17,7 @@ describe("Gamedonia test environments", function() {
 
     it("run jobs", function() {
 
-    	 var resJob = env.runJob( "orders");
+    	 var resJob = env.runJob( "jobapidata");
     	 expect(resJob.isOk()).toBe(true);
     	 if(resJob.isOk()) {
     		 
@@ -57,11 +57,11 @@ describe("Gamedonia test environments", function() {
 
     		// multiple load
 	    	var loaded = session.loadData(col_name,[
-		                                             {"name":"The Godfather"},
-		                                             {"name":"Jurassic Park"},
-		                                             {"name":"Titanic"},
-		                                             {"name":"Saving private Ryan"},
-		                                             {"name":"Indiana Jones"}
+		                                             {"name":"John","lastname":"Smith"},
+		                                             {"name":"Michael","lastname":"Douglas"},
+		                                             {"name":"Tom","lastname":"Jerry"},
+		                                             {"name":"Tony","lastname":"Soprano"},
+		                                             {"name":"Walter","lastname":"White"},
 		                                             ]);
 	    	expect(loaded.isOk()).toBe(true);
 			expect(loaded.getResult()).not.toBeUndefined();
@@ -70,18 +70,14 @@ describe("Gamedonia test environments", function() {
 			var entCount = session.count(col_name, "{}");
 			expect(entCount.isOk()).toBe(true);
 			expect(entCount.getResult().count).toBe(5);
-
-			var ordersCount = session.count("orders", "{}");
-			expect(ordersCount.isOk()).toBe(true);
-			expect(ordersCount.getResult().count).toBeGreaterThan(0);
 		});
 	    
 	    it("insert single entity & get", function() {
 	    
 	    	// single insert
-			var inserted = session.insertData(col_name,{"name":"Batman"});
+			var inserted = session.insertData(col_name,{"name":"Paul"});
 			expect(inserted.isOk()).toBe(true);
-			expect(inserted.getResult().name).toBe("Batman");
+			expect(inserted.getResult().name).toBe("Paul");
 			
 			var entCount = session.count(col_name, "{}");
 			expect(entCount.isOk()).toBe(true);
@@ -91,7 +87,7 @@ describe("Gamedonia test environments", function() {
 			
 			var ent = session.get(col_name, entityId);
 	    	expect(ent.isOk()).toBe(true);
-	    	expect(ent.getResult().name).toBe("Batman");
+	    	expect(ent.getResult().name).toBe("Paul");
 	    })
 	    
 	    it("run custom scripts", function() {
