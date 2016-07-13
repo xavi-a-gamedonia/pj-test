@@ -22,7 +22,6 @@ describe("Gamedonia test environments", function() {
     	 if(resJob.isOk()) {
     		 
     		 var jobData = resJob.getResult();
-    		 out.println("JOB result: " +jobData);
     	 }
  	});
      
@@ -92,39 +91,35 @@ describe("Gamedonia test environments", function() {
 	    
 	    it("run custom scripts", function() {
 	    	
-	    	// before running, 0 rankings
-	    	var rankingsCount = session.count("rankings", "{}");
-			expect(rankingsCount.isOk()).toBe(true);
-			expect(rankingsCount.getResult().count).toBe(0);
-	    	
 	    	// run the script
-	    	var scriptResult = session.run("addranking", {player:"player1",score:400 });
+	    	var scriptResult = session.run("addslot", {collec:"slots",name:"mine",points:400 });
 	    	if(scriptResult.isOk()) {	
 	    		
 	    		var result = scriptResult.getResult();
 	    		expect(result).not.toBeUndefined();
-	    		out.println(result.player);
-	    		expect(result.player).toBe("player1");4
-	    		expect(result.score).toBe(400);
+	    		out.println(result.name);
+	    		expect(result.name).toBe("mine");
+	    		expect(result.points).toBe(400);
 	    	}
 	    	else {
 	    		fail("run failed");
 	    	}
 	    	
 	    	// after running, 1 ranking
-	    	rankingsCount = session.count("rankings", "{}");
+	    	rankingsCount = session.count("slots", "{}");
 			expect(rankingsCount.isOk()).toBe(true);
 			expect(rankingsCount.getResult().count).toBe(1);
 	    });
 
 	    it("search", function() {
 
-	    	var searchResult = session.search(col_name,'{"name":"Jurassic Park"}');
+	    	var searchResult = session.search(col_name,'{"name":"Walter","lastname":"White"}');
 	    	if (searchResult.isOk()) {
 	    		
 	    		var res = searchResult.getResult();
 	    		out.println("SEARCH result: " +res[0].name);
-	    		expect(res[0].name).toBe("Jurassic Park");
+	    		expect(res[0].name).toBe("Walter");
+	    		expect(res[0].lastname).toBe("White");
 	    	}
 	    	else {
 	    		fail("search failed");
