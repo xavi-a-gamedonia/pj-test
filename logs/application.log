@@ -226,3 +226,27 @@ USER SCRIPTING API KEY: 60f3e520-58fd-42d0-a957-21737a656d2b
 2016-07-15 11:23:43,997 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
 USER API KEY: [60f3e520-58fd-42d0-a957-21737a656d2b]
 
+2016-07-15 11:49:32,190 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-15 11:49:50,839 - [ERROR] - from application in Connect Thread 
+null
+
+2016-07-15 11:49:50,839 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-15 11:51:04,584 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-15 11:51:04,706 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-15 11:51:48,805 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-15 11:51:48,865 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-15 11:52:05,076 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Loading file libentity.js
+
