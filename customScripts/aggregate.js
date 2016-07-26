@@ -25,8 +25,6 @@ slots.forEach(function(slot){
     });
 });
 
-out.println("aa");
-
 gamedonia.data.aggregate(colName, 
 [
      '{ $match: { status: "A" } }',

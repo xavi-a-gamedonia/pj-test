@@ -1,7 +1,7 @@
 describe("Gamedonia test environments", function() {
     
 	// config
-	var col_name = "players";
+	var colName = "players";
 	
     var env=null;
 
@@ -54,7 +54,7 @@ describe("Gamedonia test environments", function() {
 	    it("load multiple data into collections",function() {
 
     		// multiple load
-	    	var loaded = session.loadData(col_name,[
+	    	var loaded = session.loadData(colName,[
 		                                             {"name":"John","lastname":"Smith"},
 		                                             {"name":"Michael","lastname":"Douglas"},
 		                                             {"name":"Tom","lastname":"Jerry"},
@@ -65,7 +65,7 @@ describe("Gamedonia test environments", function() {
 			expect(loaded.getResult()).not.toBeUndefined();
 			expect(loaded.getResult().length).toEqual(5);
 
-			var entCount = session.count(col_name, "{}");
+			var entCount = session.count(colName, "{}");
 			expect(entCount.isOk()).toBe(true);
 			expect(entCount.getResult().count).toBe(5);
 		});
@@ -73,17 +73,17 @@ describe("Gamedonia test environments", function() {
 	    it("insert single entity & get", function() {
 	    
 	    	// single insert
-			var inserted = session.insertData(col_name,{"name":"Paul"});
+			var inserted = session.insertData(colName,{"name":"Paul"});
 			expect(inserted.isOk()).toBe(true);
 			expect(inserted.getResult().name).toBe("Paul");
 			
-			var entCount = session.count(col_name, "{}");
+			var entCount = session.count(colName, "{}");
 			expect(entCount.isOk()).toBe(true);
 			expect(entCount.getResult().count).toBe(6);
 			
 			var entityId = inserted.getResult()._id;
 			
-			var ent = session.get(col_name, entityId);
+			var ent = session.get(colName, entityId);
 	    	expect(ent.isOk()).toBe(true);
 	    	expect(ent.getResult().name).toBe("Paul");
 	    })
@@ -112,7 +112,7 @@ describe("Gamedonia test environments", function() {
 
 	    it("search", function() {
 
-	    	var searchResult = session.search(col_name,'{"name":"Walter","lastname":"White"}');
+	    	var searchResult = session.search(colName,'{"name":"Walter","lastname":"White"}');
 	    	if (searchResult.isOk()) {
 	    		
 	    		var res = searchResult.getResult();

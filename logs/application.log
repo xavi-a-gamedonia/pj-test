@@ -250,3 +250,84 @@ Listening for HTTP on /0:0:0:0:0:0:0:0:8181
 2016-07-15 11:52:05,076 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
 Loading file libentity.js
 
+2016-07-18 11:51:43,201 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-18 11:51:43,528 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-18 11:52:08,736 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Loading file libentity.js
+
+2016-07-19 12:39:14,505 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 12:39:15,075 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 12:39:35,598 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
+Loading file libentity.js
+
+2016-07-19 12:44:11,517 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 12:44:11,586 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 12:44:22,886 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+Loading file libentity.js
+
+2016-07-19 12:49:07,480 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 12:49:07,537 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 12:49:19,950 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+Loading file libentity.js
+
+2016-07-19 13:08:37,630 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 13:08:37,706 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 13:08:50,682 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Loading file libentity.js
+
+2016-07-19 13:19:45,657 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 13:19:45,733 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 13:20:03,734 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
+Loading file libentity.js
+
+2016-07-19 13:21:22,922 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 13:21:22,981 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 13:21:40,665 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
+Loading file libentity.js
+
+2016-07-19 15:04:06,202 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 15:04:06,286 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 15:04:51,638 - [INFO] - from application in play-akka.actor.default-dispatcher-4 
+Loading file libentity.js
+
+2016-07-19 15:27:45,966 - [INFO] - from play in Connect Thread 
+Application started (Prod)
+
+2016-07-19 15:27:46,051 - [INFO] - from play in Connect Thread 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8181
+
+2016-07-19 15:28:26,028 - [INFO] - from application in play-akka.actor.default-dispatcher-3 
+Loading file libentity.js
+

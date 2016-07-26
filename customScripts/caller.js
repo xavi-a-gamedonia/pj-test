@@ -10,7 +10,7 @@ require (["libentity"], function(mylib) {
 		success: function(res_create) {
 			
 				log.info(res_create.name);
-				response.success();
+				response.success(res_create);
 			},
 		error: function(error) {
 			

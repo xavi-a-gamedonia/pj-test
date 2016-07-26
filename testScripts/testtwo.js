@@ -2,11 +2,12 @@
 describe("Test two", function() {
     
     var env=null;
+    var colName = "testsapi";
     
     var user = null;
 	var session = null;
 
-    beforeAll(function() {
+    beforeEach(function() {
           env = gamedonia.createTestEnvironment();
           
           // we create a user
@@ -16,7 +17,7 @@ describe("Test two", function() {
           session = user.login();
     });
      
-     afterAll(function() {
+     afterEach(function() {
     	 
 		session.logout();
 		user = null;
@@ -42,17 +43,48 @@ describe("Test two", function() {
 	 	
 		var scriptResult = session.run("caller");
 		expect(scriptResult.isOk()).toBe(true);
+		var actualResult = scriptResult.getResult();
+		expect(actualResult.name).toBe("John");
+		
+		var searchResult = session.search(colName,'{"name":"John"}');
+	    if (searchResult.isOk()) {
+	         
+	        var res = searchResult.getResult();
+	        expect(res.length).toBe(1);
+	        expect(res[0].name).toBe("John");
+	    }
+	    else {
+	        fail("search failed");
+	    }
 	});
 	
 	it("aggregate test", function() {
 	 	
 		var scriptResult = session.run("aggregate");
 		expect(scriptResult.isOk()).toBe(true);
+		
+		var actualResult = scriptResult.getResult();
+		expect(actualResult.length).toBe(2);
 	});
 	
 	it("specific fields", function() {
 	 	
+    	var loaded = session.loadData(colName,[
+	                                             {"name":"John","lastname":"Smith","score":100},
+	                                             {"name":"Michael","lastname":"Douglas","score":200},
+	                                             {"name":"Tom","lastname":"Jerry","score":300},
+	                                             {"name":"Tony","lastname":"Soprano","score":400},
+	                                             {"name":"Walter","lastname":"White","score":500},
+	                                             ]);
+    	expect(loaded.isOk()).toBe(true);
+		expect(loaded.getResult()).not.toBeUndefined();
+		expect(loaded.getResult().length).toEqual(5);
+		
 		var scriptResult = session.run("specificfields");
 		expect(scriptResult.isOk()).toBe(true);
+		
+		var actualResult = scriptResult.getResult();
+		expect(actualResult[0].lastname).toBeUndefined();
+		expect(actualResult[0].name).not.toBeUndefined();
 	});
 });
